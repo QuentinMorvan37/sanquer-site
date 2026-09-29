@@ -1,9 +1,9 @@
 {
   "banniere": {
     "actif": true,
-    "image": "/assets/images/uploads/2026-09-29-gemini-generated-image-ar4edvar4edvar4e-o0ji0.jpg",
-    "alt": "",
-    "lien": ""
+    "image": "",
+    "alt": "Inscriptions 2026-2027",
+    "lien": "pages/infos.html#inscription"
   },
   "ticker": [
     {
@@ -17,9 +17,9 @@
       "lien": "pages/infos.html#inscription"
     },
     {
-      "date": "3-4 OCTOBRE 2026",
-      "titre": "Convocations",
-      "lien": "pages/club"
+      "date": "JUIN 2026",
+      "titre": "Challenge Steph-Cariou : Brest et Morlaix remportent la 3ème Edition",
+      "lien": "https://sanquerbasket.fr/index.php/la-presse/1018-les-equipes-de-brest-et-morlaix-remportent-la-troisieme-edition-du-challenge-steph-cariou"
     }
   ],
   "actualites": [
@@ -60,7 +60,7 @@
       "boutons": [
         {
           "texte": "Voir les convocations",
-          "lien": "pages/infos.html#convocations",
+          "lien": "pages/convocations.html",
           "style": "ghost"
         }
       ]

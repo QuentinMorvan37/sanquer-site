@@ -21,7 +21,7 @@ import crypto from 'node:crypto';
 
 export const config = { path: '/api/admin' };
 
-const DATA_FILES = ['accueil', 'photos', 'presse', 'partenaires'];
+const DATA_FILES = ['convocations', 'accueil', 'photos', 'presse', 'partenaires'];
 const UPLOAD_PATH = /^assets\/images\/uploads\/[a-z0-9][a-z0-9-]{0,80}\.(jpg|jpeg|png|webp|gif)$/;
 const MAX_IMAGE_BYTES = 4 * 1024 * 1024;   // après redimensionnement côté navigateur
 const MAX_IMAGES_PER_PUBLISH = 60;
@@ -125,7 +125,13 @@ async function readDataFiles() {
   const out = {};
   for (const name of DATA_FILES) {
     const path = repoPath(`data/${name}.json`);
-    const file = await gh('GET', `/contents/${path.split('/').map(encodeURIComponent).join('/')}?ref=${encodeURIComponent(branch)}`);
+    let file;
+    try {
+      file = await gh('GET', `/contents/${path.split('/').map(encodeURIComponent).join('/')}?ref=${encodeURIComponent(branch)}`);
+    } catch (err) {
+      if (err.githubStatus === 404 && name === 'convocations') { out[name] = { sha: null, content: {} }; continue; }
+      throw err;
+    }
     const content = Buffer.from(file.content, 'base64').toString('utf8');
     out[name] = { sha: file.sha, content: JSON.parse(content) };
   }
@@ -202,7 +208,7 @@ async function publish({ files, images, base, message }) {
     tree.push({ path: repoPath(img.path), mode: '100644', type: 'blob', sha: img.sha });
   }
   const newTree = await gh('POST', '/git/trees', { base_tree: head.treeSha, tree });
-  const label = { accueil: 'accueil', photos: 'photos', presse: 'presse', partenaires: 'partenaires' };
+  const label = { convocations: 'convocations', accueil: 'accueil', photos: 'photos', presse: 'presse', partenaires: 'partenaires' };
   const summary = names.map(n => label[n]).join(', ') + (images.length ? ` (+${images.length} image${images.length > 1 ? 's' : ''})` : '');
   const text = String(message || '').replace(/\s+/g, ' ').trim().slice(0, 120);
   const commit = await gh('POST', '/git/commits', {

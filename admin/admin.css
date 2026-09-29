@@ -157,3 +157,6 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--bleu);bo
   body.has-publishbar{padding-bottom:130px;}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important;}}
+
+.group-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.input-date,.input-time{max-width:220px;}

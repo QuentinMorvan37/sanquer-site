@@ -1,7 +1,7 @@
 # Espace bénévoles — PL Sanquer Brest Basketball
 
 L'espace bénévoles permet de modifier le site sans toucher au code :
-page d'accueil, albums photos, presse et partenaires.
+convocations du week-end, page d'accueil, albums photos, presse et partenaires.
 
 - Adresse : **`https://votre-site/admin/`** (lien « Espace bénévoles » en bas de chaque page)
 - Connexion : **un identifiant et un mot de passe**, sans compte Netlify ni GitHub.
@@ -22,7 +22,7 @@ Bénévole ─► /admin/ ─► « Publier » ─► fonction /api/admin ─►
 
 - L'identifiant et le mot de passe sont stockés **dans les réglages Netlify**,
   jamais dans le code (le dépôt GitHub est public).
-- Le contenu est rangé dans `data/*.json`, les photos dans `assets/images/uploads/`.
+- Le contenu est rangé dans `data/*.json` (dont `data/convocations.json`), les photos dans `assets/images/uploads/`.
 - Les photos sont réduites automatiquement dans le navigateur (2000 px
   maximum) avant l'envoi.
 - Chaque clic sur « Publier » crée **un seul** enregistrement GitHub, donc
@@ -81,6 +81,23 @@ redéployez. Toutes les sessions en cours sont alors déconnectées.
 3. Faites vos changements. Une barre bleue apparaît en bas : rien n'est
    en ligne tant que vous n'avez pas cliqué sur **Publier**.
 4. Cliquez sur **Publier**. Le site est à jour d'ici une à deux minutes.
+
+### Publier les convocations du week-end (chaque semaine)
+1. Onglet **Convocations** (il s'ouvre en premier).
+2. Cliquez sur **Nouveau week-end (effacer tous les matchs)** pour vider
+   les matchs de la semaine passée. Rien ne change sur le site avant « Publier ».
+3. **Ajouter un match** : équipe, date, heure du match, heure de
+   rendez-vous, domicile ou extérieur, adversaire. À l'extérieur, indiquez
+   la salle et son adresse : le site affiche un lien « Itinéraire ».
+4. Pour une autre équipe qui joue le même jour, cliquez sur **⧉ Dupliquer**
+   puis changez juste ce qui diffère.
+5. **Publier**. La page `pages/convocations.html` classe les matchs par jour
+   et par heure, et les parents peuvent filtrer sur leur équipe (le lien
+   filtré peut être partagé, par exemple sur le groupe WhatsApp de l'équipe).
+
+Joueurs convoqués : le site est public, mettez seulement les prénoms
+pour les mineurs. Si les dates sont passées, le site l'indique tout seul
+aux visiteurs.
 
 **Ajouter un album :** onglet Photos → *Ajouter un album* → titre et date →
 *Ajouter des photos* (vous pouvez en sélectionner plusieurs d'un coup) →

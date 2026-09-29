@@ -355,6 +355,103 @@ function renderPresse(data){
   observeReveals(grid);
 }
 
+// ---- Page Convocations ------------------------------------------------
+const SALLE_DOMICILE = 'Salle Georges-Vigier, Brest';
+
+function parseDay(d){ const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || ''); return m ? new Date(+m[1], m[2] - 1, +m[3]) : null; }
+const fmtDay = d => d.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+const fmtHour = h => (h || '').replace(':', 'h');
+const teamKey = t => (t || '').trim().toLowerCase();
+
+function renderConvocations(data){
+  const box = document.getElementById('convocationsListe');
+  if (!box) return;
+  const matchs = (data.matchs || []).filter(m => m && (m.equipe || m.adversaire))
+    .map(m => ({ ...m, _day: parseDay(m.date) }))
+    .sort((a, b) => ((a._day || 0) - (b._day || 0)) || (a.heure_match || '').localeCompare(b.heure_match || ''));
+
+  if (!matchs.length && !data.message && !data.affiche) return; // on garde le message « bientôt en ligne »
+
+  const days = matchs.map(m => m._day).filter(Boolean);
+  const first = days.length ? new Date(Math.min(...days)) : null;
+  const last = days.length ? new Date(Math.max(...days)) : null;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const passe = last && last < today;
+
+  let periode = '';
+  if (first && last) {
+    periode = first.getTime() === last.getTime()
+      ? fmtDay(first)
+      : `du ${fmtDay(first)} au ${fmtDay(last)}`;
+  }
+
+  const equipes = [];
+  matchs.forEach(m => { if (m.equipe && !equipes.some(e => teamKey(e) === teamKey(m.equipe))) equipes.push(m.equipe.trim()); });
+
+  const card = m => {
+    const dom = m.lieu !== 'exterieur';
+    const salle = (m.salle || '').trim() || (dom ? SALLE_DOMICILE : '');
+    const adresse = [salle, (m.adresse || '').trim()].filter(Boolean).join(', ');
+    const carte = adresse ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}` : '';
+    return `
+      <article class="convoc-card" data-equipe="${escapeHTML(teamKey(m.equipe))}">
+        <div class="convoc-time">
+          <span class="convoc-label">Match</span>
+          <b>${escapeHTML(fmtHour(m.heure_match) || '—')}</b>
+          ${m.heure_rdv ? `<span class="convoc-rdv">RDV ${escapeHTML(fmtHour(m.heure_rdv))}</span>` : ''}
+        </div>
+        <div class="convoc-main">
+          <div class="convoc-top">
+            <h4>${escapeHTML(m.equipe || 'Équipe')}</h4>
+            <span class="convoc-lieu ${dom ? 'dom' : 'ext'}">${dom ? 'Domicile' : 'Extérieur'}</span>
+          </div>
+          ${m.adversaire ? `<p class="convoc-vs">${dom ? 'reçoit' : 'se déplace à'} <strong>${escapeHTML(m.adversaire)}</strong></p>` : ''}
+          ${salle ? `<p class="convoc-salle">${escapeHTML(adresse)}${carte ? ` · <a href="${carte}" target="_blank" rel="noopener">Itinéraire</a>` : ''}</p>` : ''}
+          ${m.remarque ? `<p class="convoc-note">${escapeHTML(m.remarque)}</p>` : ''}
+          ${m.joueurs ? `<p class="convoc-joueurs"><span>Convoqués :</span> ${escapeHTML(m.joueurs)}</p>` : ''}
+        </div>
+      </article>`;
+  };
+
+  const groups = [];
+  matchs.forEach(m => {
+    const key = m._day ? m._day.toDateString() : 'sans-date';
+    let g = groups.find(x => x.key === key);
+    if (!g) groups.push(g = { key, day: m._day, items: [] });
+    g.items.push(m);
+  });
+
+  box.innerHTML = `
+    ${periode ? `<p class="convoc-periode">Week-end ${escapeHTML(periode.startsWith('du') ? periode : 'du ' + periode)}</p>` : ''}
+    ${passe ? `<p class="convoc-alerte">Ces convocations concernent le week-end passé. Celles du prochain week-end seront publiées en fin de semaine.</p>` : ''}
+    ${data.message ? `<div class="convoc-message">${escapeHTML(data.message).replace(/\n/g, '<br>')}</div>` : ''}
+    ${equipes.length > 1 ? `<div class="convoc-filtres" role="group" aria-label="Filtrer par équipe">
+        <button type="button" class="convoc-chip" data-equipe="" aria-pressed="true">Toutes les équipes</button>
+        ${equipes.map(e => `<button type="button" class="convoc-chip" data-equipe="${escapeHTML(teamKey(e))}" aria-pressed="false">${escapeHTML(e)}</button>`).join('')}
+      </div>` : ''}
+    ${groups.map(g => `
+      <div class="convoc-day">
+        <h3>${g.day ? escapeHTML(fmtDay(g.day)) : 'Date à préciser'}</h3>
+        <div class="convoc-list">${g.items.map(card).join('')}</div>
+      </div>`).join('')}
+    ${data.affiche ? `<figure class="convoc-affiche"><a href="${escapeHTML(resolveAsset(data.affiche))}" target="_blank" rel="noopener">${imgHTML(data.affiche, 'Affiche des convocations', 1600)}</a><figcaption>Affiche des convocations (cliquez pour agrandir)</figcaption></figure>` : ''}
+  `;
+
+  // Filtre par équipe (mémorisé dans l'adresse : on peut partager le lien de son équipe)
+  const chips = box.querySelectorAll('.convoc-chip');
+  const apply = key => {
+    chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.equipe === key)));
+    box.querySelectorAll('.convoc-card').forEach(c => { c.hidden = !!key && c.dataset.equipe !== key; });
+    box.querySelectorAll('.convoc-day').forEach(d => { d.hidden = !d.querySelector('.convoc-card:not([hidden])'); });
+  };
+  chips.forEach(c => c.addEventListener('click', () => {
+    apply(c.dataset.equipe);
+    history.replaceState(null, '', c.dataset.equipe ? '#equipe=' + encodeURIComponent(c.dataset.equipe) : location.pathname);
+  }));
+  const fromHash = decodeURIComponent((location.hash.match(/equipe=([^&]+)/) || [])[1] || '');
+  if (fromHash && [...chips].some(c => c.dataset.equipe === fromHash)) apply(fromHash);
+}
+
 // ---- Chargement -------------------------------------------------------
 function loadContenuDynamique(){
   const tasks = [];
@@ -369,6 +466,9 @@ function loadContenuDynamique(){
   }
   if (document.getElementById('galerie')) {
     tasks.push(fetchData('photos').then(renderGalerie).catch(onError('photos')));
+  }
+  if (document.getElementById('convocationsListe')) {
+    tasks.push(fetchData('convocations').then(renderConvocations).catch(onError('convocations')));
   }
   if (document.getElementById('presseGrid')) {
     tasks.push(fetchData('presse').then(renderPresse).catch(onError('presse')));

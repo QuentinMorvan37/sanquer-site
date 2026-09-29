@@ -15,7 +15,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex');
 
-const DATA_FILES = ['accueil', 'photos', 'presse', 'partenaires'];
+const DATA_FILES = ['convocations', 'accueil', 'photos', 'presse', 'partenaires'];
 const UPLOAD_PATH = '/^assets\/images\/uploads\/[a-z0-9][a-z0-9-]{0,80}\.(jpg|jpeg|png|webp|gif)$/';
 const MAX_IMAGE_BYTES = 4194304;
 const MAX_IMAGES_PER_PUBLISH = 60;

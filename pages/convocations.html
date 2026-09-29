@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photos &mdash; PL Sanquer Brest Basketball</title>
-<meta name="description" content="PL Sanquer Brest Basketball — club de basket brestois fondé en 1946. Équipes, championnats, école de basket, inscriptions et vie du club.">
+<title>Convocations du week-end &mdash; PL Sanquer Brest Basketball</title>
+<meta name="description" content="Convocations du week-end du PL Sanquer Brest Basketball : rendez-vous, horaires des matchs et salles pour chaque équipe.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Chivo+Mono:ital,wght@0,500;0,600&display=swap" rel="stylesheet">
@@ -43,8 +43,8 @@
       <a href="../pages/infos.html">Infos pratiques</a>
       <a href="../pages/partenariat.html">Partenariat</a>
       <a href="../pages/presse.html">Presse</a>
-      <a href="../pages/photos.html" class="active">Photos</a>
-      <a href="../pages/convocations.html" class="nav-mobile">Convocations</a>
+      <a href="../pages/photos.html">Photos</a>
+      <a href="../pages/convocations.html" class="nav-mobile active">Convocations</a>
       <a href="../pages/contact.html">Contact</a>
     </nav>
     <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
@@ -53,28 +53,22 @@
 
 <main>
 
-<div class="page active" id="photos">
+<div class="page active" id="convocationsPage">
   <section class="tight">
     <div class="wrap">
       <div class="head reveal">
-        <div class="eyebrow"><span class="ermine"><svg viewBox="0 0 20 24" fill="currentColor"><rect x="8.5" y="8" width="3" height="14" rx="1"/><circle cx="10" cy="4" r="4"/></svg></span>Photos</div>
-        <h2>La galerie du club</h2>
-        <p>Matchs, entra&icirc;nements, stages et moments de vie du patro &mdash; galerie &agrave; remplir avec vos photos.</p>
+        <div class="eyebrow"><span class="ermine"><svg viewBox="0 0 20 24" fill="currentColor"><rect x="8.5" y="8" width="3" height="14" rx="1"/><circle cx="10" cy="4" r="4"/></svg></span>Chaque week-end</div>
+        <h2>Convocations</h2>
+        <p>Heures de rendez-vous, horaires des matchs et salles pour toutes les &eacute;quipes du patro.</p>
       </div>
-      <div id="galerie">
-      <!-- Remplacé automatiquement par les albums de data/photos.json (modifiable depuis /admin/) -->
-      <div class="grid grid-4">
-        <div class="ph reveal"><span>Photo</span></div>
-        <div class="ph rouge reveal"><span>Photo</span></div>
-        <div class="ph wood reveal"><span>Photo</span></div>
-        <div class="ph reveal"><span>Photo</span></div>
-        <div class="ph wood reveal"><span>Photo</span></div>
-        <div class="ph rouge reveal"><span>Photo</span></div>
-        <div class="ph reveal"><span>Photo</span></div>
-        <div class="ph rouge reveal"><span>Photo</span></div>
+
+      <!-- Rempli automatiquement depuis data/convocations.json (modifiable depuis /admin/) -->
+      <div id="convocationsListe" class="convoc">
+        <div class="convoc-empty">
+          <h3>Convocations bient&ocirc;t en ligne</h3>
+          <p>Les convocations du week-end sont publi&eacute;es en fin de semaine. En cas de doute, contactez l&rsquo;entra&icirc;neur de votre &eacute;quipe.</p>
+        </div>
       </div>
-      </div>
-      <p class="note">Astuce&nbsp;: pensez aussi aux photos d&rsquo;archives (&eacute;quipes des ann&eacute;es 50-70, salle Richelieu) pour une rubrique &laquo;&nbsp;M&eacute;moire du patro&nbsp;&raquo;.</p>
     </div>
   </section>
 </div>

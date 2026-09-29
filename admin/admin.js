@@ -18,6 +18,41 @@ const LIEN_HINT = 'Une page du site (ex : pages/infos.html#inscription) ou une a
 
 const SECTIONS = [
   {
+    file: 'convocations', tab: 'Convocations',
+    intro: 'Les matchs du week-end, affichés sur la page Convocations. Chaque semaine : « Nouveau week-end », puis ajoutez les matchs.',
+    fields: [
+      { name: 'matchs', label: 'Matchs du week-end', type: 'list', singular: 'un match',
+        duplicate: true, clearAll: 'Nouveau week-end (effacer tous les matchs)',
+        hint: 'Les matchs sont classés automatiquement par jour et par heure sur le site. « Dupliquer » recopie un match pour aller plus vite.',
+        summary: m => {
+          const d = /^(\d{4})-(\d{2})-(\d{2})$/.exec(m.date || '');
+          const jour = d ? new Date(+d[1], d[2] - 1, +d[3]).toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric' }) : '';
+          return [jour, (m.heure_match || '').replace(':', 'h'), m.equipe,
+            m.adversaire ? (m.lieu === 'exterieur' ? 'à ' : 'contre ') + m.adversaire : ''].filter(Boolean).join(' · ');
+        },
+        fields: [
+          { name: 'equipe', label: 'Équipe', type: 'string', hint: 'Ex : U13 F1, Seniors G2' },
+          { name: 'date', label: 'Date du match', type: 'date' },
+          { name: 'heure_match', label: 'Heure du match', type: 'time' },
+          { name: 'heure_rdv', label: 'Heure de rendez-vous', type: 'time' },
+          { name: 'lieu', label: 'Lieu', type: 'select', options: [['domicile', 'À domicile'], ['exterieur', 'À l’extérieur']] },
+          { name: 'adversaire', label: 'Adversaire', type: 'string', hint: 'Ex : Landerneau BC' },
+          { name: 'salle', label: 'Salle', type: 'string',
+            hint: 'À domicile, laissez vide : « Salle Georges-Vigier, Brest » s’affiche automatiquement.' },
+          { name: 'adresse', label: 'Adresse de la salle', type: 'string',
+            hint: 'Pour le lien « Itinéraire ». Ex : 12 rue de la Gare, Landerneau' },
+          { name: 'remarque', label: 'Infos pratiques', type: 'text',
+            hint: 'Covoiturage, tenue, table de marque, goûter…' },
+          { name: 'joueurs', label: 'Joueurs convoqués', type: 'text',
+            hint: 'Facultatif. Le site est public : pour les mineurs, mettez seulement les prénoms.' },
+        ]},
+      { name: 'message', label: 'Message pour toutes les équipes', type: 'text',
+        hint: 'Facultatif. Ex : « En cas d’absence, prévenez votre entraîneur avant jeudi soir. »' },
+      { name: 'affiche', label: 'Affiche des convocations', type: 'image', maxSide: 2000,
+        hint: 'Facultatif : si vous avez déjà une affiche ou une capture des convocations, elle s’affichera sous la liste.' },
+    ],
+  },
+  {
     file: 'accueil', tab: 'Accueil',
     intro: 'Tout ce qui s’affiche en haut de la page d’accueil.',
     fields: [
@@ -117,7 +152,7 @@ const state = {
   shas: {},       // { accueil: 'sha du fichier sur GitHub' }
   data: {},       // contenu en cours d'édition
   staged: {},     // photos ajoutées mais pas encore publiées : { '/assets/images/uploads/x.jpg': {base64, url} }
-  tab: 'accueil',
+  tab: 'convocations',
   busy: false,
 };
 
@@ -279,7 +314,9 @@ function renderEditor() {
   root.innerHTML = '';
   root.append(el('p', { class: 'section-intro' }, s.intro));
   const data = state.data[s.file];
+  const wasClean = !dirtyFiles().includes(s.file);
   for (const f of s.fields) root.append(renderField(f, data));
+  if (wasClean) state.original[s.file] = JSON.stringify(data);
 }
 
 function changed() {
@@ -352,6 +389,14 @@ function renderField(f, obj) {
       sel.addEventListener('change', () => { obj[f.name] = sel.value; changed(); });
       return fieldWrap(f, sel, id);
     }
+    case 'date':
+    case 'time': {
+      if (obj[f.name] == null) obj[f.name] = '';
+      const input = el('input', { id, type: f.type, class: 'input-' + f.type });
+      input.value = obj[f.name];
+      input.addEventListener('input', () => { obj[f.name] = input.value; changed(); refreshSummaries(input); });
+      return fieldWrap(f, input, id);
+    }
     case 'image':   return renderImage(f, obj, id);
     case 'object':  return renderObject(f, obj);
     case 'list':    return renderList(f, obj);
@@ -402,9 +447,18 @@ function renderList(f, obj) {
     if (card) { card.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); card.querySelector('input,textarea')?.focus(); }
   });
 
+  const buttons = el('div', { class: 'group-buttons' });
+  if (f.clearAll) {
+    buttons.append(el('button', { type: 'button', class: 'btn btn-small btn-quiet', onclick: () => {
+      if (!list.length) return;
+      if (!confirm('Effacer les ' + list.length + ' éléments de la liste ? (Rien ne change sur le site tant que vous ne cliquez pas sur « Publier ».)')) return;
+      list.splice(0, list.length); openSet.clear(); draw(); changed();
+    } }, f.clearAll));
+  }
+  buttons.append(addBtn);
   const head = el('div', { class: 'group-head' },
     el(nested ? 'h3' : 'h2', { class: 'group-title' }, f.label, el('span', { class: 'count' }, String(list.length))),
-    addBtn);
+    buttons);
   box.append(head);
   if (f.hint) box.append(el('p', { class: 'field-hint' }, f.hint));
   box.append(itemsBox);
@@ -437,6 +491,15 @@ function renderList(f, obj) {
         thumbSrc ? el('img', { class: 'item-thumb', src: imageUrl(thumbSrc), alt: '' }) : null,
         title,
         el('span', { class: 'item-tools' },
+          f.duplicate ? el('button', { type: 'button', class: 'icon-btn', title: 'Dupliquer', 'aria-label': 'Dupliquer',
+            onclick: e => {
+              e.preventDefault();
+              list.splice(i + 1, 0, JSON.parse(JSON.stringify(item)));
+              const shifted = [...openSet].map(k => (k > i ? k + 1 : k));
+              openSet.clear(); shifted.forEach(k => openSet.add(k)); openSet.add(i + 1);
+              draw(); changed();
+              itemsBox.children[i + 1]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            } }, '⧉') : null,
           el('button', { type: 'button', class: 'icon-btn', title: 'Monter', 'aria-label': 'Monter', disabled: i === 0,
             onclick: e => { e.preventDefault(); move(i, -1); } }, '↑'),
           el('button', { type: 'button', class: 'icon-btn', title: 'Descendre', 'aria-label': 'Descendre', disabled: i === list.length - 1,

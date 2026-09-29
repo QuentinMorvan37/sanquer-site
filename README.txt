@@ -44,6 +44,7 @@ Espace bénévoles (administration) :
 - /netlify/functions/admin.mjs → serveur de l'admin sur Netlify (publie sur GitHub)
 - /admin/api.php            → serveur de l'admin chez un hébergeur PHP (écrit sur place)
 - /admin/config.exemple.php → modèle des identifiants pour l'hébergeur (config.php)
+- /data/convocations.json   → matchs du week-end (page pages/convocations.html)
 - /data/accueil.json        → bannière, bandeau, diaporama, « À ne pas manquer »
 - /data/photos.json         → albums de la page Photos
 - /data/presse.json         → articles de la page Presse
