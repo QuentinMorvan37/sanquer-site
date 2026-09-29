@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Espace bénévoles &mdash; PL Sanquer Brest Basketball</title>
+  <link rel="icon" href="/assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Écran de connexion -->
+  <main class="login" id="login" hidden>
+    <form class="login-card" id="loginForm" novalidate>
+      <img class="login-logo" src="/assets/images/logo.jpg" alt="">
+      <h1>Espace bénévoles</h1>
+      <p class="login-intro">Mettez à jour l'accueil, les photos, la presse et les partenaires du site.</p>
+      <label class="field">
+        <span class="field-label">Identifiant</span>
+        <input id="loginUser" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </label>
+      <label class="field">
+        <span class="field-label">Mot de passe</span>
+        <input id="loginPass" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="login-error" id="loginError" role="alert" hidden></p>
+      <button class="btn btn-primary btn-block" type="submit" id="loginBtn">Se connecter</button>
+      <a class="login-back" href="/">Retour au site</a>
+    </form>
+  </main>
+
+  <!-- Application -->
+  <div class="app" id="app" hidden>
+    <header class="topbar">
+      <a class="brand" href="/" title="Voir le site">
+        <img src="/assets/images/logo.jpg" alt="">
+        <span>Espace bénévoles</span>
+      </a>
+      <nav class="top-actions">
+        <a href="/" target="_blank" rel="noopener">Voir le site</a>
+        <button type="button" id="logoutBtn">Se déconnecter</button>
+      </nav>
+    </header>
+
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+
+    <main class="content">
+      <div class="notice" id="notice" role="status" hidden></div>
+      <div id="loading" class="loading">Chargement du contenu…</div>
+      <div id="editor"></div>
+    </main>
+
+    <div class="publishbar" id="publishbar" hidden>
+      <div class="publishbar-inner">
+        <p class="publish-status" id="publishStatus"></p>
+        <div class="publish-actions">
+          <button type="button" class="btn btn-quiet" id="discardBtn">Annuler les changements</button>
+          <button type="button" class="btn btn-primary" id="publishBtn">Publier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="filePicker" accept="image/*" hidden>
+
+  <script src="admin.js"></script>
+</body>
+</html>

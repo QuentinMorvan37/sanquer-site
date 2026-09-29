@@ -1,0 +1,103 @@
+{
+  "banniere": {
+    "actif": true,
+    "image": "",
+    "alt": "Inscriptions 2026-2027",
+    "lien": "pages/infos.html#inscription"
+  },
+  "ticker": [
+    {
+      "date": "JUILLET 2026",
+      "titre": "Summer camps U9-U13 et U15-U18 : inscriptions ouvertes",
+      "lien": "https://www.helloasso.com/associations/patronage-laique-sanquer/evenements/summer-camp-u9-u11-u13"
+    },
+    {
+      "date": "SAISON 2026-2027",
+      "titre": "Réinscriptions et nouvelles licences : dossiers en ligne",
+      "lien": "pages/infos.html#inscription"
+    },
+    {
+      "date": "JUIN 2026",
+      "titre": "Challenge Steph-Cariou : Brest et Morlaix remportent la 3ème Edition",
+      "lien": "https://sanquerbasket.fr/index.php/la-presse/1018-les-equipes-de-brest-et-morlaix-remportent-la-troisieme-edition-du-challenge-steph-cariou"
+    }
+  ],
+  "actualites": [
+    {
+      "tag": "Événement",
+      "titre": "Challenge Steph-Cariou, 3ème édition",
+      "texte": "Les équipes de Brest et de Morlaix remportent le tournoi organisé par le club.",
+      "image": "",
+      "lien": "pages/presse.html"
+    },
+    {
+      "tag": "Stages",
+      "titre": "Summer camps 2026",
+      "texte": "Deux semaines de stage cet été : U9–U13 et U15–U18. Inscriptions sur HelloAsso.",
+      "image": "",
+      "lien": "pages/formation.html"
+    },
+    {
+      "tag": "Saison 2026-2027",
+      "titre": "Les inscriptions sont ouvertes",
+      "texte": "Dossiers enfant et adulte disponibles en ligne, du Baby Basket au basket loisir.",
+      "image": "",
+      "lien": "pages/infos.html#inscription"
+    },
+    {
+      "tag": "Anniversaire",
+      "titre": "1946–2026 : le patro a 80 ans",
+      "texte": "Huit décennies de basket dans le quartier de Sanquer. Retour sur l'histoire du club.",
+      "image": "",
+      "lien": "pages/club.html"
+    }
+  ],
+  "panneau": [
+    {
+      "etiquette": "Convocations",
+      "titre": "Convocations de la semaine",
+      "texte": "Horaires des matchs et rendez-vous du week-end pour toutes les équipes, publiés chaque semaine.",
+      "boutons": [
+        {
+          "texte": "Voir les convocations",
+          "lien": "pages/infos.html#convocations",
+          "style": "ghost"
+        }
+      ]
+    },
+    {
+      "etiquette": "Saison 2026-2027",
+      "titre": "Inscriptions & réinscriptions",
+      "texte": "Dossiers d'inscription enfant et adulte, tarifs et catégories d'âge : tout se fait en ligne.",
+      "boutons": [
+        {
+          "texte": "S'inscrire en ligne",
+          "lien": "https://inscription.plmsanquer.org/",
+          "style": "rouge"
+        },
+        {
+          "texte": "Infos & documents",
+          "lien": "pages/infos.html#inscription",
+          "style": "ghost"
+        }
+      ]
+    },
+    {
+      "etiquette": "Soutenir le patro",
+      "titre": "Dons & partenariat",
+      "texte": "Le club vit grâce à ses bénévoles, ses partenaires et vos dons (reçu fiscal via HelloAsso).",
+      "boutons": [
+        {
+          "texte": "Faire un don",
+          "lien": "https://www.helloasso.com/associations/patronage-laique-sanquer/formulaires/1",
+          "style": "ghost"
+        },
+        {
+          "texte": "Devenir partenaire",
+          "lien": "pages/partenariat.html",
+          "style": "ghost"
+        }
+      ]
+    }
+  ]
+}

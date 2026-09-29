@@ -1,0 +1,22 @@
+# Le site est à la racine du dépôt : Netlify publie tout tel quel
+# (aucune étape de compilation). La fonction de l'espace bénévoles
+# se trouve dans netlify/functions/.
+[build]
+  publish = "."
+  command = ""
+
+[functions]
+  directory = "netlify/functions"
+
+# Les données modifiées depuis l'admin doivent toujours être à jour.
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# L'espace bénévoles n'est pas référencé par les moteurs de recherche.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "public, max-age=0, must-revalidate"

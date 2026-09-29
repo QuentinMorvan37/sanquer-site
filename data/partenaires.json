@@ -1,0 +1,119 @@
+{
+  "partenaires": [
+    {
+      "nom": "Super U Brest Kerichen",
+      "logo": "/assets/images/superu.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Ville de Brest",
+      "logo": "/assets/images/VilleBrest.png",
+      "lien": ""
+    },
+    {
+      "nom": "Groupe EDSI",
+      "logo": "/assets/images/edsi.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Département du Finistère",
+      "logo": "/assets/images/finistere.png",
+      "lien": ""
+    },
+    {
+      "nom": "GSA Nostra",
+      "logo": "/assets/images/casanostr.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Les Caves de Mon Père",
+      "logo": "/assets/images/caves.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Aramisauto Brest",
+      "logo": "/assets/images/aramis.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Chez Coco",
+      "logo": "/assets/images/coco.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "TP Folgoas",
+      "logo": "/assets/images/tp.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Prévanticip",
+      "logo": "/assets/images/prevanticip.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "La Chamade",
+      "logo": "/assets/images/chamade.png",
+      "lien": ""
+    },
+    {
+      "nom": "Bihannic",
+      "logo": "/assets/images/bihannic.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Tanguy Matériaux",
+      "logo": "/assets/images/tanguy.png",
+      "lien": ""
+    },
+    {
+      "nom": "Arema Hydraulique",
+      "logo": "/assets/images/arema.png",
+      "lien": ""
+    },
+    {
+      "nom": "S2P",
+      "logo": "/assets/images/s2p.png",
+      "lien": ""
+    },
+    {
+      "nom": "Yann Lebreton Expert-comptable",
+      "logo": "/assets/images/yann.png",
+      "lien": ""
+    },
+    {
+      "nom": "EIMA",
+      "logo": "/assets/images/eima.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Icomi France Immobilier",
+      "logo": "/assets/images/icomi.png",
+      "lien": ""
+    },
+    {
+      "nom": "Herry Automobiles",
+      "logo": "/assets/images/herry.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "CDL",
+      "logo": "/assets/images/cdl.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Kostum",
+      "logo": "/assets/images/kostum.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "Eurovia",
+      "logo": "/assets/images/eurovia.jpg",
+      "lien": ""
+    },
+    {
+      "nom": "L’Échelle Européenne",
+      "logo": "/assets/images/echelle.png",
+      "lien": ""
+    }
+  ]
+}

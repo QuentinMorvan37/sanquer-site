@@ -1,0 +1,19 @@
+{
+  "albums": [
+    {
+      "titre": "Summer camps 2026 — les affiches",
+      "date": "Juillet 2026",
+      "description": "Exemple d'album : remplacez ou complétez-le depuis l'espace d'administration.",
+      "photos": [
+        {
+          "image": "/assets/images/summer_camp1.png",
+          "legende": "Summer camp U9-U13"
+        },
+        {
+          "image": "/assets/images/summer_camp2.png",
+          "legende": "Summer camp U15-U18"
+        }
+      ]
+    }
+  ]
+}

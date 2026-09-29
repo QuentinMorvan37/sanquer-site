@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archives &mdash; PL Sanquer Brest Basketball</title>
+<meta name="description" content="Archives du PL Sanquer Brest Basketball : équipes et championnats des saisons passées, saison par saison, depuis 2012.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Chivo+Mono:ital,wght@0,500;0,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  /* Archives — spécifique à cette page (n'affecte pas le reste du site) */
+  .saison{border:1px solid var(--ligne);background:#fff;margin-bottom:10px;}
+  .saison[open]{border-color:var(--nuit);}
+  .saison summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;
+    padding:16px 20px;transition:background-color .15s;
+  }
+  .saison summary::-webkit-details-marker{display:none;}
+  .saison summary:hover{background:var(--gris-froid);}
+  .saison summary::after{
+    content:"+";margin-left:auto;font-family:var(--font-mono);font-size:22px;
+    line-height:1;color:var(--rouge);transition:transform .18s;
+  }
+  .saison[open] summary::after{content:"\2013";}
+  .saison-annee{
+    font-family:var(--font-display);font-style:italic;font-weight:800;
+    font-size:26px;color:var(--encre);letter-spacing:0.5px;
+  }
+  .saison[open] .saison-annee{color:var(--rouge);}
+  .saison-compte{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--ardoise);
+  }
+  .saison-corps{padding:4px 20px 22px;border-top:1px solid var(--ligne);}
+  .arch-groupe{margin-top:18px;}
+  .arch-groupe h4{
+    font-family:var(--font-display);font-style:italic;font-weight:700;
+    font-size:14px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--nuit);margin-bottom:10px;
+  }
+  .arch-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .arch-pill{
+    display:inline-flex;align-items:center;background:var(--gris-froid);
+    border:1px solid var(--ligne);padding:6px 13px;font-size:13px;font-weight:600;
+    color:var(--encre);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-social">
+        <a href="#" class="topbar-social-link">Facebook</a>
+        <a href="#" class="topbar-social-link">Instagram</a>
+      </div>
+      <div class="topbar-right">
+        <a href="../pages/boutique.html" class="topbar-link">Boutique</a>
+        <a href="https://inscription.plmsanquer.org/" class="topbar-link accent" target="_blank" rel="noopener">S&rsquo;inscrire 2026-2027 &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <a class="brand" href="../index.html">
+      <img src="../assets/images/logo.jpg" alt="Blason PL Sanquer Brest Basketball">
+      <div class="brand-text">
+        <b>SANQUER BREST</b>
+        <span>BASKETBALL &middot; ABAOE 1946</span>
+      </div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="../index.html">Accueil</a>
+      <a href="../pages/club.html">Le Club</a>
+      <a href="../pages/equipes.html">Nos Équipes</a>
+      <a href="../pages/championnat.html">Championnat</a>
+      <a href="../pages/formation.html">Formation</a>
+      <a href="../pages/infos.html">Infos pratiques</a>
+      <a href="../pages/partenariat.html">Partenariat</a>
+      <a href="../pages/presse.html">Presse</a>
+      <a href="../pages/photos.html">Photos</a>
+      <a href="../pages/contact.html">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<div class="page active" id="archives">
+  <section class="tight">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow"><span class="ermine"><svg viewBox="0 0 20 24" fill="currentColor"><rect x="8.5" y="8" width="3" height="14" rx="1"/><circle cx="10" cy="4" r="4"/></svg></span>Archives</div>
+        <h2>La mémoire du patro</h2>
+        <p>Les équipes engagées et les championnats des saisons passées, depuis 2012. Dépliez une saison pour en voir le détail. La saison en cours est sur la page <a href="equipes.html" style="color:var(--rouge);font-weight:600;">Nos Équipes</a>.</p>
+      </div>
+
+      <div class="reveal">
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2025-2026</span>
+            <span class="saison-compte">16 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">Équipe D</span><span class="arch-pill">U18 A</span><span class="arch-pill">U18 B</span><span class="arch-pill">U15 A</span><span class="arch-pill">U15 B</span><span class="arch-pill">U13 A</span><span class="arch-pill">U13 B</span><span class="arch-pill">U11 A</span><span class="arch-pill">U11 B</span><span class="arch-pill">U9</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">U18 Filles</span><span class="arch-pill">U13 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2025-2026" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2025-2026" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2024-2025</span>
+            <span class="saison-compte">20 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">Équipe D</span><span class="arch-pill">U18 A</span><span class="arch-pill">U18 B</span><span class="arch-pill">U15 A</span><span class="arch-pill">U15 B</span><span class="arch-pill">U13 A</span><span class="arch-pill">U13 B</span><span class="arch-pill">U11 A</span><span class="arch-pill">U11 B</span><span class="arch-pill">U9 A</span><span class="arch-pill">U9 B</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">U18 Filles</span><span class="arch-pill">U15 Filles</span><span class="arch-pill">U13 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>École &amp; loisir</h4><div class="arch-pills"><span class="arch-pill">Baby Basket</span><span class="arch-pill">Basket loisir</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2024-2025" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2023-2025" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2023-2024</span>
+            <span class="saison-compte">16 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">Équipe D</span><span class="arch-pill">U17</span><span class="arch-pill">U15 A</span><span class="arch-pill">U15 B</span><span class="arch-pill">U13 A</span><span class="arch-pill">U13 B</span><span class="arch-pill">U11</span><span class="arch-pill">U9 A</span><span class="arch-pill">U9 B</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">U18 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2023-2024" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2023-2024" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2022-2023</span>
+            <span class="saison-compte">14 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">U17 A</span><span class="arch-pill">U17 B</span><span class="arch-pill">U15</span><span class="arch-pill">U13 A</span><span class="arch-pill">U11 A</span><span class="arch-pill">U11 B</span><span class="arch-pill">U9 A</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Séniors Filles</span><span class="arch-pill">U18 Filles</span><span class="arch-pill">U15 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2022-2023" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2022-2023" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2021-2022</span>
+            <span class="saison-compte">11 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">U17</span><span class="arch-pill">U15</span><span class="arch-pill">U13</span><span class="arch-pill">U9</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Séniors Filles</span><span class="arch-pill">U15 Filles</span><span class="arch-pill">U13 Filles</span><span class="arch-pill">U9 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2021-2022" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2021-2022" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2020-2021</span>
+            <span class="saison-compte">1 équipe</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">U15 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2020-2021" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2020-2021" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2019-2020</span>
+            <span class="saison-compte">10 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">U17</span><span class="arch-pill">U15</span><span class="arch-pill">U13 (1)</span><span class="arch-pill">U13 (2)</span><span class="arch-pill">U11 (1)</span><span class="arch-pill">U11 (2)</span><span class="arch-pill">U9 (2)</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">U13 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>École &amp; loisir</h4><div class="arch-pills"><span class="arch-pill">Baby Basket</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2019-2020" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2019-2020" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2018-2019</span>
+            <span class="saison-compte">6 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">U17</span><span class="arch-pill">U15</span><span class="arch-pill">U11</span><span class="arch-pill">U9</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Séniors Filles</span><span class="arch-pill">U13 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2018-2019" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2018-2019" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2017-2018</span>
+            <span class="saison-compte">7 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">Équipe D</span><span class="arch-pill">U11 A</span><span class="arch-pill">U9 A</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Équipe 1 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2017-2018" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2017-2018" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2016-2017</span>
+            <span class="saison-compte">12 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">Équipe B</span><span class="arch-pill">Équipe C</span><span class="arch-pill">Équipe D</span><span class="arch-pill">Équipe E</span><span class="arch-pill">U17</span><span class="arch-pill">U13</span><span class="arch-pill">U11 A</span><span class="arch-pill">U9 A</span><span class="arch-pill">U9 B</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Équipe 1 Filles</span><span class="arch-pill">U11 Filles</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2016-2017" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2016-2017" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2015-2016</span>
+            <span class="saison-compte">15 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Séniors A</span><span class="arch-pill">Séniors B</span><span class="arch-pill">Séniors C</span><span class="arch-pill">Séniors D</span><span class="arch-pill">Séniors E</span><span class="arch-pill">U17 A</span><span class="arch-pill">U17 B</span><span class="arch-pill">U17 C</span><span class="arch-pill">U15</span><span class="arch-pill">U13</span><span class="arch-pill">U9</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Équipe A</span><span class="arch-pill">U13</span><span class="arch-pill">U9</span></div></div>
+            <div class="arch-groupe"><h4>École &amp; loisir</h4><div class="arch-pills"><span class="arch-pill">Les plus petits</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2015-2016" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2015-2016" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2014-2015</span>
+            <span class="saison-compte">13 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Séniors A</span><span class="arch-pill">Séniors B</span><span class="arch-pill">Séniors C</span><span class="arch-pill">Séniors D</span><span class="arch-pill">U20</span><span class="arch-pill">U17 A</span><span class="arch-pill">U17 B</span><span class="arch-pill">U15</span><span class="arch-pill">U13</span><span class="arch-pill">U11</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Séniors A</span><span class="arch-pill">Séniors B</span></div></div>
+            <div class="arch-groupe"><h4>École &amp; loisir</h4><div class="arch-pills"><span class="arch-pill">Sport adapté</span></div></div>
+            <div class="arch-groupe"><h4>Championnats</h4><div class="arch-pills"><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/seniors/saison-2014-2015" target="_blank" rel="noopener">Résultats séniors &rarr;</a><a class="pill" href="https://sanquerbasket.fr/index.php/resultats/jeunes/saison-2014-2015" target="_blank" rel="noopener">Résultats jeunes &rarr;</a></div></div>
+          </div>
+        </details>
+        <details class="saison reveal">
+          <summary>
+            <span class="saison-annee mono">2012-2013</span>
+            <span class="saison-compte">17 équipes</span>
+          </summary>
+          <div class="saison-corps">
+            <div class="arch-groupe"><h4>Garçons</h4><div class="arch-pills"><span class="arch-pill">Séniors A</span><span class="arch-pill">Séniors B</span><span class="arch-pill">Séniors C</span><span class="arch-pill">Séniors D</span><span class="arch-pill">Séniors E</span><span class="arch-pill">U17 A</span><span class="arch-pill">U17 B</span><span class="arch-pill">U15 A</span><span class="arch-pill">U15 B</span><span class="arch-pill">U13 A</span><span class="arch-pill">U13 B</span><span class="arch-pill">U11 A</span><span class="arch-pill">U11 B</span></div></div>
+            <div class="arch-groupe"><h4>Filles</h4><div class="arch-pills"><span class="arch-pill">Séniors A</span><span class="arch-pill">Séniors B</span><span class="arch-pill">Séniors C</span><span class="arch-pill">U15</span></div></div>
+
+          </div>
+        </details>
+      </div>
+
+      <p class="note">Les liens « Résultats » pointent vers les classements FFBB archivés. À réactualiser si l&rsquo;ancien site est fermé (ou à remplacer par des captures / PDF).</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand">
+        <img src="../assets/images/logo.jpg" alt="Blason du club">
+        <div class="brand-text"><b>SANQUER BREST</b><span>BASKETBALL &middot; ABAOE 1946</span></div>
+      </div>
+      <p style="font-size:13.5px;line-height:1.6;max-width:280px;">Le Patronage La&iuml;que Sanquer, club de basketball brestois fond&eacute; en 1946, ouvert &agrave; toutes et tous, du Baby Basket au basket loisir.</p>
+    </div>
+    <div>
+      <h4>Le Club</h4>
+      <ul>
+        <li><a href="../pages/club.html">Pr&eacute;sentation &amp; histoire</a></li>
+        <li><a href="../pages/equipes.html">Nos &eacute;quipes</a></li>
+        <li><a href="../pages/archives.html">Archives des saisons</a></li>
+        <li><a href="../pages/championnat.html">Championnat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pratique</h4>
+      <ul>
+        <li><a href="../pages/infos.html">Infos pratiques</a></li>
+        <li><a href="https://inscription.plmsanquer.org/" target="_blank" rel="noopener">Inscriptions en ligne</a></li>
+        <li><a href="https://www.helloasso.com/associations/patronage-laique-sanquer/formulaires/1" target="_blank" rel="noopener">Faire un don (HelloAsso)</a></li>
+        <li><a href="../pages/boutique.html">Boutique</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="../pages/contact.html">Nous &eacute;crire</a></li>
+        <li>Salle Georges-Vigier, Brest</li>
+        <li><a href="../pages/partenariat.html">Devenir partenaire</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; <span id="footYear">2026</span> PL Sanquer Brest Basketball &mdash; Patronage La&iuml;que Sanquer.</span>
+    <span>Abaoe 1946 &mdash; fait avec passion &agrave; Brest, Bretagne. &middot; <a href="../admin/" rel="nofollow">Espace b&eacute;n&eacute;voles</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/script.js"></script>
+
+</body>
+</html>

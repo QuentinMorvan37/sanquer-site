@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil &mdash; PL Sanquer Brest Basketball</title>
+<meta name="description" content="PL Sanquer Brest Basketball — club de basket brestois fondé en 1946. Équipes, championnats, école de basket, inscriptions et vie du club.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Chivo+Mono:ital,wght@0,500;0,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-social">
+        <a href="#" class="topbar-social-link">Facebook</a>
+        <a href="#" class="topbar-social-link">Instagram</a>
+      </div>
+      <div class="topbar-right">
+        <a href="pages/boutique.html" class="topbar-link">Boutique</a>
+        <a href="https://inscription.plmsanquer.org/" class="topbar-link accent" target="_blank" rel="noopener">S&rsquo;inscrire 2026-2027 &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.jpg" alt="Blason PL Sanquer Brest Basketball">
+      <div class="brand-text">
+        <b>SANQUER BREST</b>
+        <span>BASKETBALL &middot; ABAOE 1946</span>
+      </div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="pages/club.html">Le Club</a>
+      <a href="pages/equipes.html">Nos Équipes</a>
+      <a href="pages/championnat.html">Championnat</a>
+      <a href="pages/formation.html">Formation</a>
+      <a href="pages/infos.html">Infos pratiques</a>
+      <a href="pages/partenariat.html">Partenariat</a>
+      <a href="pages/presse.html">Presse</a>
+      <a href="pages/photos.html">Photos</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <div class="ticker">
+    <div class="wrap ticker-inner" id="tickerInner">
+      <!-- Rempli automatiquement depuis data/accueil.json (modifiable depuis /admin/) -->
+    </div>
+  </div>
+
+  <div class="promo-banner" id="promoBanner">
+    <a href="pages/infos.html#inscription" class="ph"><span>Grande banni&egrave;re &agrave; ins&eacute;rer &mdash; ex. visuel inscriptions 2026-2027, summer camp, &eacute;v&eacute;nement</span></a>
+  </div>
+
+  <div class="seam" aria-hidden="true"></div>
+
+  <section>
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow"><span class="ermine"><svg viewBox="0 0 20 24" fill="currentColor"><rect x="8.5" y="8" width="3" height="14" rx="1"/><circle cx="10" cy="4" r="4"/></svg></span>Nouveaut&eacute;s</div>
+        <h2>&Ccedil;a se passe au club</h2>
+        <p>Résultats, temps forts et vie du patro.</p>
+      </div>
+      <div class="slider reveal" id="newsSlider" aria-label="Actualit&eacute;s du club">
+        <div class="slides" id="sliderTrack">
+          <!-- Remplacé automatiquement par data/accueil.json (modifiable depuis /admin/) -->
+          <div class="slide"><div class="ph"><span>Photo &agrave; ins&eacute;rer</span></div><div class="slide-caption"><span class="tag">&Eacute;v&eacute;nement</span><h3>Challenge Steph-Cariou, 3&egrave;me &eacute;dition</h3><p>Les &eacute;quipes de Brest et de Morlaix remportent le tournoi organis&eacute; par le club.</p></div></div>
+          <div class="slide"><div class="ph"><span>Photo &agrave; ins&eacute;rer</span></div><div class="slide-caption"><span class="tag">Saison 2026-2027</span><h3>Les inscriptions sont ouvertes</h3><p>Dossiers enfant et adulte disponibles en ligne, du Baby Basket au basket loisir.</p></div></div>
+        </div>
+        <button class="slide-btn prev" id="slidePrev" aria-label="Actualit&eacute; pr&eacute;c&eacute;dente">&#8249;</button>
+        <button class="slide-btn next" id="slideNext" aria-label="Actualit&eacute; suivante">&#8250;</button>
+        <div class="dots" id="slideDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light tight">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Panneau d&rsquo;affichage</div>
+        <h2>&Agrave; ne pas manquer</h2>
+      </div>
+      <div class="grid grid-3" id="panneau">
+        <div class="avis reveal">
+          <span class="avis-stamp">Convocations</span>
+          <h3>Convocations de la semaine</h3>
+          <p id="convocationsText">Horaires des matchs et rendez-vous du week-end pour toutes les &eacute;quipes, publi&eacute;s chaque semaine.</p>
+          <div class="avis-links"><a class="btn btn-ghost" href="pages/infos.html#convocations">Voir les convocations</a></div>
+        </div>
+        <div class="avis reveal">
+          <span class="avis-stamp">Saison 2026-2027</span>
+          <h3>Inscriptions &amp; r&eacute;inscriptions</h3>
+          <p>Dossiers d&rsquo;inscription enfant et adulte, tarifs et cat&eacute;gories d&rsquo;&acirc;ge : tout se fait en ligne.</p>
+          <div class="avis-links">
+            <a class="btn btn-rouge" href="https://inscription.plmsanquer.org/" target="_blank" rel="noopener">S&rsquo;inscrire en ligne</a>
+            <a class="btn btn-ghost" href="pages/infos.html#inscription">Infos &amp; documents</a>
+          </div>
+        </div>
+        <div class="avis reveal">
+          <span class="avis-stamp">Soutenir le patro</span>
+          <h3>Dons &amp; partenariat</h3>
+          <p>Le club vit gr&acirc;ce &agrave; ses b&eacute;n&eacute;voles, ses partenaires et vos dons (re&ccedil;u fiscal via HelloAsso).</p>
+          <div class="avis-links">
+            <a class="btn btn-ghost" href="https://www.helloasso.com/associations/patronage-laique-sanquer/formulaires/1" target="_blank" rel="noopener">Faire un don</a>
+            <a class="btn btn-ghost" href="pages/partenariat.html">Devenir partenaire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">R&eacute;sultats</div>
+        <h2>R&eacute;sultats par cat&eacute;gorie</h2>
+        <p>Cliquez sur une cat&eacute;gorie pour consulter son classement et ses prochains matchs.</p>
+      </div>
+      <div class="grid grid-3">
+        <a class="card cat-card reveal" href="pages/championnat.html#seniors">
+          <span class="tag">S&eacute;niors gar&ccedil;ons</span><h3>&Eacute;quipes A &middot; B &middot; C &middot; D</h3><p>Voir les classements &rarr;</p>
+        </a>
+        <a class="card cat-card reveal" href="pages/championnat.html#filles">
+          <span class="tag">Filles</span><h3>U18 &middot; U13 &middot; U11</h3><p>Voir les r&eacute;sultats &rarr;</p>
+        </a>
+        <a class="card cat-card reveal" href="pages/championnat.html#u18">
+          <span class="tag">Jeunes</span><h3>U18 Gar&ccedil;ons</h3><p>Voir le classement &rarr;</p>
+        </a>
+        <a class="card cat-card reveal" href="pages/championnat.html#u15">
+          <span class="tag">Jeunes</span><h3>U15 Gar&ccedil;ons</h3><p>Voir le classement &rarr;</p>
+        </a>
+        <a class="card cat-card reveal" href="pages/championnat.html#u13">
+          <span class="tag">Jeunes</span><h3>U13 Gar&ccedil;ons</h3><p>Voir le classement &rarr;</p>
+        </a>
+        <a class="card cat-card reveal" href="pages/championnat.html#ecole">
+          <span class="tag">&Eacute;cole de basket</span><h3>U11 &middot; U9 &middot; Baby</h3><p>Voir les plateaux &rarr;</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Navigation rapide</div>
+        <h2>Tout le club, en un clic</h2>
+      </div>
+      <div class="grid grid-4">
+        <a class="card card-navy reveal" href="pages/club.html">
+          <span class="tag">Le Club</span><h3>Histoire &amp; valeurs</h3><p>Le patro depuis 1946, de la salle Richelieu &agrave; aujourd&rsquo;hui.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/equipes.html">
+          <span class="tag">&Eacute;quipes</span><h3>Nos cat&eacute;gories</h3><p>Pr&egrave;s de 20 &eacute;quipes, du Baby Basket au loisir.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/championnat.html">
+          <span class="tag">R&eacute;sultats</span><h3>Championnat</h3><p>Classements et calendriers de la saison.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/formation.html">
+          <span class="tag">&Eacute;cole</span><h3>Formation</h3><p>Le parcours de nos jeunes joueurs et joueuses.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/infos.html">
+          <span class="tag">Pratique</span><h3>Infos pratiques</h3><p>Tarifs, salles, plannings, cat&eacute;gories d&rsquo;&acirc;ge, Bibus.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/partenariat.html">
+          <span class="tag">Partenaires</span><h3>Partenariat</h3><p>Soutenir le club au quotidien.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/presse.html">
+          <span class="tag">M&eacute;dias</span><h3>Presse &amp; photos</h3><p>Le club dans les journaux et en images.</p>
+        </a>
+        <a class="card card-navy reveal" href="pages/contact.html">
+          <span class="tag">Rejoindre</span><h3>Contact</h3><p>Une question ? Le bureau vous r&eacute;pond.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="wrap">
+      <div class="partner-tier reveal">
+        <h3 class="partner-heading">Partenaires officiels</h3>
+        <div class="partner-grid partner-grid-officiel" id="partnerGrid">
+          <div class="partner-logo"><img src="assets/images/superu.jpg" alt="Super U Brest Kerichen"></div>
+          <div class="partner-logo"><img src="assets/images/VilleBrest.png" alt="Ville de Brest"></div>
+          <div class="partner-logo"><img src="assets/images/edsi.jpg" alt="Groupe EDSI"></div>
+          <div class="partner-logo"><img src="assets/images/finistere.png" alt="D&eacute;partement du Finist&egrave;re"></div>
+          <div class="partner-logo"><img src="assets/images/casanostr.jpg" alt="GSA Nostra"></div>
+          <div class="partner-logo"><img src="assets/images/caves.jpg" alt="Les Caves de Mon P&egrave;re"></div>
+          <div class="partner-logo"><img src="assets/images/aramis.jpg" alt="Aramisauto Brest"></div>
+          <div class="partner-logo"><img src="assets/images/coco.jpg" alt="Chez Coco"></div>
+          <div class="partner-logo"><img src="assets/images/tp.jpg" alt="TP Folgoas"></div>
+          <div class="partner-logo"><img src="assets/images/prevanticip.jpg" alt="Pr&eacute;vanticip"></div>
+          <div class="partner-logo"><img src="assets/images/chamade.png" alt="La Chamade"></div>
+          <div class="partner-logo"><img src="assets/images/bihannic.jpg" alt="Bihannic"></div>
+          <div class="partner-logo"><img src="assets/images/tanguy.png" alt="Tanguy Mat&eacute;riaux"></div>
+          <div class="partner-logo"><img src="assets/images/arema.png" alt="Arema Hydraulique"></div>
+          <div class="partner-logo"><img src="assets/images/s2p.png" alt="S2P"></div>
+          <div class="partner-logo"><img src="assets/images/yann.png" alt="Yann Lebreton Expert-comptable"></div>
+          <div class="partner-logo"><img src="assets/images/eima.jpg" alt="EIMA"></div>
+          <div class="partner-logo"><img src="assets/images/icomi.png" alt="Icomi France Immobilier"></div>
+          <div class="partner-logo"><img src="assets/images/herry.jpg" alt="Herry Automobiles"></div>
+          <div class="partner-logo"><img src="assets/images/cdl.jpg" alt="CDL"></div>
+          <div class="partner-logo"><img src="assets/images/kostum.jpg" alt="Kostum"></div>
+          <div class="partner-logo"><img src="assets/images/eurovia.jpg" alt="Eurovia"></div>
+          <div class="partner-logo"><img src="assets/images/echelle.png" alt="L&rsquo;&Eacute;chelle Europ&eacute;enne"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand">
+        <img src="assets/images/logo.jpg" alt="Blason du club">
+        <div class="brand-text"><b>SANQUER BREST</b><span>BASKETBALL &middot; ABAOE 1946</span></div>
+      </div>
+      <p style="font-size:13.5px;line-height:1.6;max-width:280px;">Le Patronage La&iuml;que Sanquer, club de basketball brestois fond&eacute; en 1946, ouvert &agrave; toutes et tous, du Baby Basket au basket loisir.</p>
+    </div>
+    <div>
+      <h4>Le Club</h4>
+      <ul>
+        <li><a href="pages/club.html">Pr&eacute;sentation &amp; histoire</a></li>
+        <li><a href="pages/equipes.html">Nos &eacute;quipes</a></li>
+        <li><a href="pages/formation.html">Formation</a></li>
+        <li><a href="pages/championnat.html">Championnat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pratique</h4>
+      <ul>
+        <li><a href="pages/infos.html">Infos pratiques</a></li>
+        <li><a href="https://inscription.plmsanquer.org/" target="_blank" rel="noopener">Inscriptions en ligne</a></li>
+        <li><a href="https://www.helloasso.com/associations/patronage-laique-sanquer/formulaires/1" target="_blank" rel="noopener">Faire un don (HelloAsso)</a></li>
+        <li><a href="pages/boutique.html">Boutique</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="pages/contact.html">Nous &eacute;crire</a></li>
+        <li>Salle Georges-Vigier, Brest</li>
+        <li><a href="pages/partenariat.html">Devenir partenaire</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; <span id="footYear">2026</span> PL Sanquer Brest Basketball &mdash; Patronage La&iuml;que Sanquer.</span>
+    <span>Abaoe 1946 &mdash; fait avec passion &agrave; Brest, Bretagne. &middot; <a href="admin/" rel="nofollow">Espace b&eacute;n&eacute;voles</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
