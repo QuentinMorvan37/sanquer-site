@@ -107,7 +107,7 @@ header{
 }
 .navbar{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
-  max-width:var(--maxw);margin:0 auto;padding:22px 24px;
+  max-width:1640px;margin:0 auto;padding:22px 24px;
 }
 .brand{display:flex;align-items:center;gap:16px;position:relative;flex-shrink:0;}
 .brand img{
@@ -144,13 +144,20 @@ nav.links a.active::after,nav.links a:hover::after{transform:skewX(-30deg) scale
 }
 .burger span::before{content:"";position:absolute;top:-6px;width:20px;height:2px;background:var(--encre);}
 .burger span::after{content:"";position:absolute;top:6px;width:20px;height:2px;background:var(--encre);}
+/* Écrans moyens : le logo rond seul à gauche pour laisser la place aux 11 liens */
+@media (max-width:1639px){
+  .brand-text{display:none;}
+}
 @media (max-width:1400px){
   .brand img{width:78px;height:78px;margin:-16px 0;}
   .brand-text b{font-size:21px;}
-  nav.links a{font-size:14px;padding:9px 7px;}
-  nav.links a::after{left:7px;right:7px;}
+  nav.links a{font-size:14px;padding:9px 6px;}
+  nav.links a::after{left:6px;right:6px;}
 }
-@media (max-width:1250px){
+@media (max-width:1300px){
+  .brand-text{display:flex;}
+}
+@media (max-width:1300px){
   nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
     border-bottom:1px solid var(--ligne);padding:8px 16px 16px;box-shadow:0 1px 0 var(--ligne);}
   nav.links.open{display:flex;}
@@ -510,9 +517,6 @@ body.lb-open{overflow:hidden;}
   .lb-prev{left:calc(50% - 56px);} .lb-next{right:calc(50% - 56px);}
 }
 @media (prefers-reduced-motion:reduce){.gallery-item img{transition:none;}}
-/* Lien « Convocations » du menu : seulement dans le menu mobile (déjà dans la barre du haut) */
-nav.links a.nav-mobile{display:none;}
-@media (max-width:1250px){nav.links a.nav-mobile{display:block;}}
 
 /* ===== PAGE CONVOCATIONS ===== */
 .convoc{max-width:880px;}
